@@ -27,11 +27,11 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t hi .
-          docker tag hi ghcr.io/nicolasLuduena/package-1:latest
-          docker tag hi ghcr.io/nicolasLuduena/package-2:latest
+          docker tag hi ghcr.io/nicolasluduena/package-1:latest
+          docker tag hi ghcr.io/nicolasluduena/package-2:latest
 
       # Push the Docker image
       - name: Push Docker image
         run: |
-          docker push ghcr.io/nicolasLuduena/package-1:latest
-          docker push ghcr.io/nicolasLuduena/package-2:latest
+          docker push ghcr.io/nicolasluduena/package-1:latest
+          docker push ghcr.io/nicolasluduena/package-2:latest
