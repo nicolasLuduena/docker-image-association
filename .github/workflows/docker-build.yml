@@ -28,8 +28,8 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ghcr.io/nicolasLuduena/package-1:latest
-            ghcr.io/nicolasLuduena/package-2:latest
+            ghcr.io/nicolasluduena/package-1:latest
+            ghcr.io/nicolasluduena/package-2:latest
 
 #      - name: Build Docker image
 #        run: |
