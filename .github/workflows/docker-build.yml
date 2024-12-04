@@ -21,13 +21,23 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build Docker image
-        run: |
-          docker build -t hi .
-          docker tag hi ghcr.io/nicolasluduena/package-1:latest
-          docker tag hi ghcr.io/nicolasluduena/package-2:latest
+      - name: Build & push image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: |
+            ghcr.io/nicolasLuduena/package-1:latest
+            ghcr.io/nicolasLuduena/package-2:latest
 
-      - name: Push Docker image
-        run: |
-          docker push ghcr.io/nicolasluduena/package-1:latest
-          docker push ghcr.io/nicolasluduena/package-2:latest
+#      - name: Build Docker image
+#        run: |
+#          docker build -t hi .
+#          docker tag hi ghcr.io/nicolasluduena/package-1:latest
+#          docker tag hi ghcr.io/nicolasluduena/package-2:latest
+#
+#      - name: Push Docker image
+#        run: |
+#          docker push ghcr.io/nicolasluduena/package-1:latest
+#          docker push ghcr.io/nicolasluduena/package-2:latest
